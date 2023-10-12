@@ -20,5 +20,5 @@ jobs:
       command: 'init'
       backendServiceAWS: 'aws-terraform-con'
       backendAWSBucketName: 'terraform-aws-br'
-
+      backendAWSKey: 'AKIA3JMZJSW3SHQMJNU4'
 
