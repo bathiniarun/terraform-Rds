@@ -10,7 +10,7 @@ variables:
 jobs:
 - job: CreateRDS
   steps:
-  - task: UseTerraform@1
+  - task: TerraformInstaller@1
     inputs:
       terraformVersion: 'latest'
 
@@ -20,12 +20,6 @@ jobs:
       command: 'init'
       backendServiceAWS: 'aws-terraform-con'
       backendAWSBucketName: 'terraform-aws-br'
-
-  - task: TerraformTaskV1@0
-    inputs:
-      provider: 'aws'
-      command: 'init'
-      backendServiceConnections: '$(terraformServiceConnection)'
 
   - task: TerraformTaskV1@0
     inputs:
