@@ -1,0 +1,9 @@
+db_name              = "blackrockdb"
+db_username          = "arundevops"
+db_password          = "arundevops"
+db_instance_class    = "db.t2.micro"
+db_allocated_storage = 20
+db_engine            = "mysql"
+db_engine_version    = "5.7"
+db_port              = 3306
+aws_region           = "us-east-1"
