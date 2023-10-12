@@ -1,0 +1,28 @@
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+  terraformServiceConnection: 'aws-terraform-Con'
+
+jobs:
+- job: CreateRDS
+  steps:
+  - task: UseTerraform@1
+    inputs:
+      terraformVersion: 'latest'
+
+  - task: TerraformTaskV1@0
+    inputs:
+      provider: 'aws'
+      command: 'init'
+      backendServiceConnections: '$(terraformServiceConnection)'
+
+  - task: TerraformTaskV1@0
+    inputs:
+      provider: 'aws'
+      command: 'apply'
+      backendServiceConnections: '$(terraformServiceConnection)'
+      workingDirectory: '$(System.DefaultWorkingDirectory)/path/to/terraform/code'
