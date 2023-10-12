@@ -21,4 +21,15 @@ jobs:
       backendServiceAWS: 'aws-terraform-con'
       backendAWSBucketName: 'terraform-aws-br'
       backendAWSKey: 'AKIA3JMZJSW3SHQMJNU4'
-
+  
+  - task: TerraformTaskV4@4
+    inputs:
+      provider: 'aws'
+      command: 'plan'
+      environmentServiceNameAWS: 'aws-terraform-con'
+  
+  - task: TerraformTaskV4@4
+    inputs:
+      provider: 'aws'
+      command: 'apply'
+      environmentServiceNameAWS: 'aws-terraform-con'
