@@ -21,9 +21,4 @@ jobs:
       backendServiceAWS: 'aws-terraform-con'
       backendAWSBucketName: 'terraform-aws-br'
 
-  - task: TerraformTaskV1@0
-    inputs:
-      provider: 'aws'
-      command: 'apply'
-      backendServiceConnections: '$(terraformServiceConnection)'
-      workingDirectory: '$(System.DefaultWorkingDirectory)/path/to/terraform/code'
+
